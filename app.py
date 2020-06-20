@@ -6,7 +6,7 @@ DATA_SOURCE_URL = "https://raw.githubusercontent.com/Thomas2512/Chinese_HSK4_Cou
 
 def main():
 
-    st.header("Chinese HSK4 Class Material - Peking University")
+    st.header("Chinese HSK4 Learning Material")
     st.write("")
 
     week = st.slider(
@@ -52,7 +52,7 @@ def main():
     #     value=1
     # )
 
-    reading = 2
+    reading = 3
 
     for i in range(1, reading+1):
         READING_URL = WEEK_LESSON_URL + f"Reading{i}.png"
