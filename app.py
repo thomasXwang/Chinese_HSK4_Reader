@@ -1,9 +1,18 @@
 import streamlit as st
+import requests
+
 
 
 DATA_SOURCE_URL = "https://raw.githubusercontent.com/Thomas2512/Chinese_HSK4_Coursera/master/"
   
 
+# Function which checks if URL points to an existing file
+def exists(path):
+    r = requests.head(path)
+    return r.status_code == requests.codes.ok
+
+
+# Main Function for the Streamlit Web app
 def main():
 
     st.header("Chinese HSK4 Learning Material")
@@ -39,9 +48,12 @@ def main():
 
     for i in range(1, vocabulary+1):
         VOCAB_URL = WEEK_LESSON_URL + f"Voc{i}.png"
-        st.image(VOCAB_URL,
-            use_column_width=True
-        )
+        # st.write(VOCAB_URL)
+        # st.write(exists(VOCAB_URL))
+        if exists(VOCAB_URL):
+            st.image(VOCAB_URL,
+                use_column_width=True
+            )
 
     st.subheader("Reading")
 
@@ -56,9 +68,12 @@ def main():
 
     for i in range(1, reading+1):
         READING_URL = WEEK_LESSON_URL + f"Reading{i}.png"
-        st.image(READING_URL,
-            use_column_width=True
-        )
+        # st.write(READING_URL)
+        # st.write(exists(READING_URL))
+        if exists(READING_URL):
+            st.image(READING_URL,
+                use_column_width=True
+            )
 
 
     st.subheader("Listening")
@@ -69,7 +84,10 @@ def main():
 
         LISTENING_URL = WEEK_LESSON_URL + f"Listening{i}.mp3"
         # st.write(LISTENING_URL)
-        st.audio(LISTENING_URL)
+        # st.write(exists(LISTENING_URL))
+        if exists(LISTENING_URL):
+            st.audio(LISTENING_URL)
+
 
 
     st.write("")
