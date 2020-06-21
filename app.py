@@ -68,7 +68,7 @@ def main():
     for i in range(1, listening+1):
 
         LISTENING_URL = WEEK_LESSON_URL + f"Listening{i}.mp3"
-        st.write(LISTENING_URL)
+        # st.write(LISTENING_URL)
         st.audio(LISTENING_URL)
 
 
