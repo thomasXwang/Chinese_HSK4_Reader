@@ -63,7 +63,7 @@ def main():
 
     st.subheader("Listening")
 
-    listening = 3
+    listening = 2
 
     for i in range(1, listening+1):
 
