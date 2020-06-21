@@ -62,9 +62,14 @@ def main():
 
 
     st.subheader("Listening")
-    AUDIO_URL = WEEK_LESSON_URL + "Listening1.mp3"
-    # st.write(AUDIO_URL)
-    st.audio(AUDIO_URL)
+
+    listening = 3
+
+    for i in range(1, listening+1):
+
+        LISTENING_URL = WEEK_LESSON_URL + f"Listening{i}.png"
+        # st.write(AUDIO_URL)
+        st.audio(LISTENING_URL)
 
     st.write("")
     st.write("")
