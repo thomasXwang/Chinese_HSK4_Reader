@@ -32,7 +32,7 @@ def main():
         value=1
     )
 
-    WEEK_LESSON_URL = DATA_SOURCE_URL + f"Week{week}_Lesson{lesson}_"
+    WEEK_LESSON_URL = DATA_SOURCE_URL + f"Week{week}/Week{week}_Lesson{lesson}_"
     # st.write(WEEK_LESSON_URL)
 
     st.subheader("Vocabulary")
