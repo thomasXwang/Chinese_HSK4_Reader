@@ -37,40 +37,31 @@ def main():
 
     st.subheader("Vocabulary")
 
-    # vocabulary = st.slider(
-    #     "Select Number of Vocabulary Images",
-    #     min_value=1,
-    #     max_value=2,
-    #     value=1
-    # )
+    VOCABULARY = 2
 
-    vocabulary = 2
+    for i in range(1, VOCABULARY+1):
 
-    for i in range(1, vocabulary+1):
         VOCAB_URL = WEEK_LESSON_URL + f"Voc{i}.png"
         # st.write(VOCAB_URL)
         # st.write(exists(VOCAB_URL))
         if exists(VOCAB_URL):
+            st.write(f"{i})")
             st.image(VOCAB_URL,
                 use_column_width=True
             )
 
     st.subheader("Reading")
 
-    # reading = st.slider(
-    #     "Select Number of Reading Images",
-    #     min_value=1,
-    #     max_value=2,
-    #     value=1
-    # )
+    READING = 3
 
-    reading = 3
+    for i in range(1, READING+1):
 
-    for i in range(1, reading+1):
         READING_URL = WEEK_LESSON_URL + f"Reading{i}.png"
         # st.write(READING_URL)
         # st.write(exists(READING_URL))
         if exists(READING_URL):
+
+            st.write(f"{i})")
             st.image(READING_URL,
                 use_column_width=True
             )
@@ -78,14 +69,15 @@ def main():
 
     st.subheader("Listening")
 
-    listening = 2
+    LISTENING = 2
 
-    for i in range(1, listening+1):
+    for i in range(1, LISTENING+1):
 
         LISTENING_AUDIO_URL = WEEK_LESSON_URL + f"Listening{i}.mp3"
         # st.write(LISTENING_AUDIO_URL)
         # st.write(exists(LISTENING_AUDIO_URL))
         if exists(LISTENING_AUDIO_URL):
+            st.write(f"{i})")
             st.audio(LISTENING_AUDIO_URL)
 
         LISTENING_TEXT_URL = WEEK_LESSON_URL + f"Listening{i}.png"
@@ -96,9 +88,9 @@ def main():
                 use_column_width=True
             )
 
+        st.write("")
 
 
-    st.write("")
     st.write("")
     st.write("")
     st.write("")
