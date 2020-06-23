@@ -82,11 +82,19 @@ def main():
 
     for i in range(1, listening+1):
 
-        LISTENING_URL = WEEK_LESSON_URL + f"Listening{i}.mp3"
-        # st.write(LISTENING_URL)
-        # st.write(exists(LISTENING_URL))
-        if exists(LISTENING_URL):
-            st.audio(LISTENING_URL)
+        LISTENING_AUDIO_URL = WEEK_LESSON_URL + f"Listening{i}.mp3"
+        # st.write(LISTENING_AUDIO_URL)
+        # st.write(exists(LISTENING_AUDIO_URL))
+        if exists(LISTENING_AUDIO_URL):
+            st.audio(LISTENING_AUDIO_URL)
+
+        LISTENING_TEXT_URL = WEEK_LESSON_URL + f"Listening{i}.png"
+        # st.write(LISTENING_TEXT_URL)
+        # st.write(exists(LISTENING_TEXT_URL))
+        if exists(LISTENING_TEXT_URL):
+            st.image(LISTENING_TEXT_URL,
+                use_column_width=True
+            )
 
 
 
